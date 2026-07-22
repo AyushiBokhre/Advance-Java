@@ -1,0 +1,77 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ayushi             |
+| company            |
+| db                 |
+| information_schema |
+| mysql              |
+| p04                |
+| performance_schema |
+| rays               |
+| school             |
+| sys                |
++--------------------+
+10 rows in set (0.04 sec)
+
+mysql> use ayushi;
+Database changed
+mysql> create table Department_Module(department_Id int primary key,department_Name varchar(45),HOD_Name varchar(45),total_Faculty int ,location varchar(45));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> insert into Department_Module  values
+    ->
+    -> (101, 'Computer Science', 'Dr. Anil Sharma', 45, 'Block A'),
+    ->
+    -> (102, 'Information Technology', 'Dr. Priya Verma', 38, 'Block B'),
+    ->
+    -> (103, 'Electronics', 'Dr. Rajesh Gupta', 40, 'Block C'),
+    ->
+    -> (104, 'Mechanical', 'Dr. Neha Singh', 35, 'Block D'),
+    ->
+    -> (105, 'Civil', 'Dr. Amit Patel', 30, 'Block E'),
+    ->
+    -> (106, 'Electrical', 'Dr. Kavita Mishra', 32, 'Block F'),
+    ->
+    -> (107, 'Artificial Intelligence', 'Dr. Rohit Saxena', 25, 'Block G'),
+    ->
+    -> (108, 'Data Science', 'Dr. Sneha Joshi', 28, 'Block H'),
+    ->
+    -> (109, 'Cyber Security', 'Dr. Vivek Kumar', 22, 'Block I'),
+    ->
+    -> (110, 'MBA', 'Dr. Pooja Agarwal', 20, 'Block J');
+Query OK, 10 rows affected (0.02 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> select * from Department_Module;
++---------------+-------------------------+-------------------+---------------+----------+
+| department_Id | department_Name         | HOD_Name          | total_Faculty | location |
++---------------+-------------------------+-------------------+---------------+----------+
+|           101 | Computer Science        | Dr. Anil Sharma   |            45 | Block A  |
+|           102 | Information Technology  | Dr. Priya Verma   |            38 | Block B  |
+|           103 | Electronics             | Dr. Rajesh Gupta  |            40 | Block C  |
+|           104 | Mechanical              | Dr. Neha Singh    |            35 | Block D  |
+|           105 | Civil                   | Dr. Amit Patel    |            30 | Block E  |
+|           106 | Electrical              | Dr. Kavita Mishra |            32 | Block F  |
+|           107 | Artificial Intelligence | Dr. Rohit Saxena  |            25 | Block G  |
+|           108 | Data Science            | Dr. Sneha Joshi   |            28 | Block H  |
+|           109 | Cyber Security          | Dr. Vivek Kumar   |            22 | Block I  |
+|           110 | MBA                     | Dr. Pooja Agarwal |            20 | Block J  |
++---------------+-------------------------+-------------------+---------------+----------+
+10 rows in set (0.00 sec)
+
+mysql>
