@@ -5,21 +5,16 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class TestConnection {
-	public static void main(String[] args) throws Exception {
+public class FindByLoginId {
+public static void main(String[] args) throws Exception {
 		
-		//Step1. load Driver class into the class Loader.
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		
-		//Step 2:create connection 
+		 
 		Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","root");
-		System.out.println("Connection established successfully..."+conn.getCatalog());
-		
-		//Step 3 : create object of statement 
+	
 		Statement stmt = conn.createStatement();
 		
-		//Step 4: get ResultSet or execute query such as insert,update, delete 
-		ResultSet rs =stmt.executeQuery("select * from st_user");
+		ResultSet rs =stmt.executeQuery("select * from st_user where loginId='aayushi02@gmail.com'");
 		
 		while(rs.next()) {
 			System.out.println(rs.getInt("id"));
@@ -30,7 +25,6 @@ public class TestConnection {
 			System.out.println(rs.getDate("dob"));
 			System.out.println("-------------------");
 		}
-		
-	}
+}
 
 }
