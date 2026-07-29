@@ -19,7 +19,8 @@ public class TestTransactionHandling {
 
 			int i = stmt.executeUpdate(
 					"INSERT INTO st_user values (16, 'Sneha', 'Prajapati', 'Sneha11@gmail.com', 'pass1234', '2004-05-05')");
-			i =+ stmt.executeUpdate(
+			
+			i = stmt.executeUpdate(
 					"INSERT INTO st_user values (17, 'Mahak', 'Bokhre', 'mahak15@gmail.com', 'pass1703', '2003-03-17')");
 
 			System.out.println("record inserted :" + i + " rows affected");
@@ -27,9 +28,13 @@ public class TestTransactionHandling {
 			conn.commit();
 
 		} catch (Exception e) {
+			
 			System.out.println("Eception: " + e.getMessage());
+			
 			conn.rollback();
+			
 		} finally {
+			
 			conn.close();
 		}
 

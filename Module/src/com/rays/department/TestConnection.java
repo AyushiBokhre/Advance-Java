@@ -1,19 +1,16 @@
-package com.rays.college;
+package com.rays.department;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.Statement;
 
-public class TestUpdate {
+public class TestConnection {
 	public static void main(String[] args) throws Exception {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rays","root","root");
 		
-		Statement stmt=conn.createStatement();
+		System.out.println("Connection established Successfully...");
 		
-		int i =stmt.executeUpdate("Update college set contactNo = 123456789 where collegeId=101");
-		System.out.println("Record Updated: "+i+ " rows affected");
 	}
 
 }
