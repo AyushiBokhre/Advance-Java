@@ -16,7 +16,7 @@ public class TestUpdate {
 		
 		int i =stmt.executeUpdate("update Department set location='Block B' where departmentId=1");
 		
-		System.out.println("Record Inserted: "+i+" rows affected");
+		System.out.println("Record updated: "+i+" rows affected");
 	
 
 		
