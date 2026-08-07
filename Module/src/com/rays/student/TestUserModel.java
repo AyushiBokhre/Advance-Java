@@ -79,6 +79,24 @@ public class TestUserModel {
 			model.delete(8);
 			
 		}
+		public static void testFindByPk() throws Exception {
+
+			UserBean bean = new UserBean();
+
+			bean = model.findbypk(10);
+
+			if (bean != null) {
+				System.out.print(bean.getId());
+				System.out.print("\t" + bean.getFirstName());
+				System.out.print("\t" + bean.getLastName());
+				System.out.print("\t" + bean.getLoginId());
+				System.out.print("\t" + bean.getPassword());
+				System.out.println("\t" + bean.getDob());
+			} else {
+				throw new RuntimeException("record not found");
+			}
+
+		}
 		
 
 }	

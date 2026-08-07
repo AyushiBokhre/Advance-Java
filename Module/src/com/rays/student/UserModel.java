@@ -144,7 +144,7 @@ public class UserModel {
 	}
 	// ----------------------findbypk------------------
 
-	public void findbypk(int id) throws Exception {
+	public UserBean findbypk(int id) throws Exception {
 
 		Connection conn = null;
 		UserBean bean = null;
@@ -175,6 +175,7 @@ public class UserModel {
 		} finally {
 			conn.close();
 		}
+		return bean;
 
 	}
 
